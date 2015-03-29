@@ -161,7 +161,7 @@ app.controller('MainCtrl', [
   function($scope, posts, auth, $filter) {
     $scope.test = 'Hello world!';
     var orderBy = $filter('orderBy');
-	$scope.reverse=true;
+    $scope.reverse = true;
     $scope.posts = posts.posts;
     $scope.isLoggedIn = auth.isLoggedIn;
 
@@ -176,12 +176,12 @@ app.controller('MainCtrl', [
       $scope.title = '';
       $scope.link = '';
     };
-	
+
     $scope.order = function(predicate) {
-	  $scope.reverse=!$scope.reverse;
-	  $scope.predicate=predicate;
+      $scope.reverse = !$scope.reverse;
+      $scope.predicate = predicate;
     };
-	$scope.order('title');
+    $scope.order('title');
 
     $scope.incrementUpvotes = function(post) {
       posts.upvote(post);
